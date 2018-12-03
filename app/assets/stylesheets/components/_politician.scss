@@ -1,0 +1,33 @@
+.politician {
+  margin: 20px;
+  width: 360px;
+  height: 600px;
+  background: white;
+  border-radius: 12px;
+  box-shadow:  0 1px 7px rgba(0,0,0,.05);
+}
+
+.politician-photo {
+  height: 70%;
+  top-border-radius: 50%;
+}
+
+.politician-details {
+  padding: 20px;
+}
+
+.politician-name {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.politician-row {
+  font-weight: lighter;
+}
+
+.top-header {
+  font-weight: bold;
+  font-size: 28px;
+  text-align: center;
+  color: #aa2e2e;
+}
