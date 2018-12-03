@@ -9,7 +9,7 @@
 
 .politician-photo {
   height: 70%;
-  top-border-radius: 50%;
+  filter: grayscale(100%);
 }
 
 .politician-details {
@@ -30,4 +30,9 @@
   font-size: 28px;
   text-align: center;
   color: #aa2e2e;
+}
+
+.politicians-tagline {
+  color: #aa2e2e;
+  text-align: center;
 }
