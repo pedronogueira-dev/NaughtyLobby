@@ -1,0 +1,11 @@
+<div class='container'>
+<li>
+<% meeting = locals[:meeting] %>
+<span>With: <%= meeting.politician.name %></span><br>
+<span>From: <%= meeting.start_date %></span> <br>
+<span>To: <%= meeting.end_date %></span>
+<%= link_to "", meeting_path(meeting),
+      method: :delete,
+      data: { confirm: "Are you sure?" },class: "far fa-trash-alt" %>
+</li>
+</div>
