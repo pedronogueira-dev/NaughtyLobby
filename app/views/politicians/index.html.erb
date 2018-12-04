@@ -1,5 +1,12 @@
 <div class="container">
   <h1 class="top-header"> Our Top Politicians</h1>
+  <%= form_tag politicians_path, method: :get do %>
+  <%= text_field_tag :name_query,
+    params[:name_query],
+    class: "form-control",
+    placeholder: "Find a politician"
+  %>
+<% end %>
   <div class="row">
     <% 4.times do %>
     <div class="col-xs-12 col-sm-6 col-md-4">
