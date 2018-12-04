@@ -1,3 +1,19 @@
+.btn {
+  position: absolute;
+
+  margin-left: 90px;
+  margin-top: 390px;
+  border-radius: 12px;
+  background-color: #da552f;
+  border: none;
+}
+
+.btn:hover {
+  transition: background-color 1s ease;
+  border: none;
+  background-color: #771414;
+}
+
 .politician {
   margin: 20px;
   width: 360px;
@@ -10,6 +26,11 @@
 .politician-photo {
   height: 70%;
   filter: grayscale(100%);
+}
+
+.politician-photo:hover {
+  height: 70%;
+  filter: grayscale(0%);
 }
 
 .politician-details {
@@ -28,11 +49,11 @@
 .top-header {
   font-weight: bold;
   font-size: 28px;
-  text-align: center;
+  text-align: left;
   color: #aa2e2e;
 }
 
 .politicians-tagline {
   color: #aa2e2e;
-  text-align: center;
+  text-align: left;
 }
