@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_03_163317) do
+ActiveRecord::Schema.define(version: 2018_12_04_145614) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "meetings", force: :cascade do |t|
     t.date "start_date"
-    t.date "end_day"
+    t.date "end_date"
     t.bigint "user_id"
     t.bigint "politician_id"
     t.datetime "created_at", null: false
