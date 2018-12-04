@@ -10,6 +10,7 @@
 <div class="buffer">
 </div>
 
+
 <div class="wrapper">
   <div class="container text-center">
     <div class="row">
@@ -24,6 +25,7 @@
      </div>
    </div>
  </div>
+<%= render 'shared/flashes' %>
 
  <div class="container align-content">
   <div class="row">
@@ -68,7 +70,11 @@
         <h4> 20 EUR</h4>
       </div>
       <div>
-        <p> #this is where the date picker simple from will go</p>
+        <%= form_for([@politician, @meeting])do |f| %>
+        <%= f.date_field :start_date%>
+        <%= f.date_field :end_date%>
+        <%= f.submit "Create" %>
+          <% end %>
       </div>
     </div>
     <div>
@@ -96,3 +102,4 @@
     </div>
   </div>
 </div>
+
