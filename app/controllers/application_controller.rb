@@ -1,8 +1,8 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
-  skip_before_action :authenticate_user!, only: [:home, :dashboard]
+  skip_before_action :authenticate_user!, only: [:home, :politicians]
 
   def after_sign_in_path_for(resource)
-  dashboard_path
-end
+    dashboard_path
+  end
 end
