@@ -1,2 +1,10 @@
-<h1>Reviews#new</h1>
-<p>Find me in app/views/reviews/new.html.erb</p>
+<div class="container">
+  <h1>Review</h1>
+  <%= simple_form_for[@politician, @review] do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.select :rating  %>
+  <%= f.submit "add a review", class: "btn btn-primary" %>
+  <% end %>
+</div>
+
