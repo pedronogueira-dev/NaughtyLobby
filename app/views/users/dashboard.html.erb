@@ -1,2 +1,18 @@
-<h1>Users#dashboard</h1>
-<p>Find me in app/views/users/dashboard.html.erb</p>
+<div class="user-dashboard">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <%= render "shared/user_profile" %>
+      </div>
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <div class="meetings-list"></div>
+      <div class="votes-list"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div col-ms-3 col-offset-6">
+        <%= link_to "Check Politicians", politicians_path %>
+      </div>
+    </div>
+  </div>
+</div>

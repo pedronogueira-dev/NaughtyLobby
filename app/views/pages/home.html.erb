@@ -1,2 +1,63 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+  <%= render 'shared/flashes' %>
+  <%= render 'shared/banner' %>
+  <div class="container">
+    <h1 class="top-header"> Our Top Politicians</h1>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="politician">
+          <div class="politician-photo" style="background: linear-gradient(to bottom,rgba(20,20,20, 0.8),rgba(76,76,76,0.2) 30%), url(<%= image_path 'putin.jpg' %>) center / cover no-repeat;">
+            <button type="button" class="btn btn-primary btn-lg algin-content ">Click to Lobby</button>
+          </div>
+          <div class="politician-details">
+            <div class="politician-name">
+              <p>Putin</p>
+            </div>
+            <div class="politician-row">
+              <span class="politicians-tagline">
+                <p> If the pinky fits, annex it </p>
+              </span>
+              <span class="politician-reviews_count">13 reviews</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="politician">
+          <div class="politician-photo" style="background: linear-gradient(to bottom,rgba(20,20,20, 0.8),rgba(76,76,76,0.2) 30%), url(<%= image_path 'obama.jpg' %>) center / cover no-repeat;">
+            <button type="button" class="btn btn-primary btn-lg algin-content ">Click to Lobby</button>
+          </div>
+          <div class="politician-details">
+            <div class="politician-name">
+              <p>Obama</p>
+            </div>
+            <div class="politician-row">
+              <span class="politicians-tagline">
+                <p> When I said I want Change, I mean't I was broke! </p>
+              </span>
+              <span class="politician-reviews_count">39 reviews</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="politician">
+          <div class="politician-photo" style="background: linear-gradient(to bottom,rgba(20,20,20, 0.8),rgba(76,76,76,0.2) 30%), url(<%= image_path 'kim.jpg' %>) center / cover no-repeat;">
+            <button type="button" class="btn btn-primary btn-lg algin-content ">Click to Lobby</button>
+          </div>
+          <div class="politician-details">
+            <div class="politician-name">
+              <p>Kim Jong-Un</p>
+            </div>
+            <div class="politician-row">
+              <span class="politicians-tagline">
+                <p> I'll do what I must for Champaign, Pork Pies, & Power </p>
+              </span>
+              <span class="politician-reviews_count">139 reviews</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+

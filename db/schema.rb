@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 2018_12_04_145614) do
     t.bigint "politician_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "used_services", default: false, null: false
     t.index ["politician_id"], name: "index_reviews_on_politician_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
