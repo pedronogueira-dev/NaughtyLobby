@@ -25,7 +25,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:index, :show, :new, :create]
   end
 
-  get :dasboard, to: 'users#dasboard'
+  get :dashboard, to: 'users#dashboard'
 
   delete :meeting, to: 'votes#destroy'
   delete :vote, to: 'meeting#destroy'
