@@ -1,20 +1,18 @@
 class ReviewsController < ApplicationController
-  # before_action :get_politician, only: [:new, :create, :show]
+  before_action :get_politician, only: [:new, :create, :show]
   def index
   end
 
   def show
-    @politician = Politician.find(params[:politician_id])
     @review = Review.find(params[:id])
   end
 
   def new
-    @politician = Politician.find(params[:politician_id])
+
     @review = Review.new
   end
 
   def create
-    @politician = Politician.find(params[:politician_id])
     @review = Review.new(review_params)
     @review.politician = @politician
     @review.user = current_user
