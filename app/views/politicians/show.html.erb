@@ -2,8 +2,8 @@
 <div class="politician-header">
   <div class="loction-photo" style="background: linear-gradient(to bottom,rgba(20,20,20, 0.8),rgba(76,76,76,0.2) 30%), url(<%= image_path 'moscow.jpg' %>) center / cover no-repeat;">
   </div>
-  <div>
-   <%= image_tag("putin.jpg", :class => "politician-avatar")%>
+  <div class="align-content">
+   <%= image_tag(@politician.photo_url, :class => "politician-avatar")%>
  </div>
 </div>
 
@@ -16,10 +16,10 @@
     <div class="row">
       <div class="col-sm-12">
         <div class="politicain-about">
-         <h1 class="name">Vladimir Putin</h1>
-         <h3 class="tagline">If the Pinky fits, annex it!</h3>
-         <p class="description text-left">
-           This is a description about me. This is a description about me. This is a description about me. This is a description about me. This is a description about me. This is a description about me. This is a description about me. This is a description about me. This is a description about me. This is a description about me. This is a description about me. This is a description about me.
+         <h1 class="name"><%= @politician.name %></h1>
+         <h3 class="tagline"><%= @politician.tag_line %></h3>
+         <p class="description text-center">
+          <%= @politician.general_description %>
          </p>
        </div>
      </div>
@@ -34,8 +34,9 @@
       <h3> Putin has 32 Total Reviews</h3>
       <h5> Average Rating of 2.2</h5>
       <h5> Average Verified Rating of 8.2</h5>
-      <h5> Add a Review -- pending link with [politian_:id]</h5>
-      <%= link_to "Add a Review", new_politician_review_path(@politician) %>
+      <h5>
+      <%= link_to "Add a Review", new_politician_review_path(@politician), class:"btn btn-primary btn-lg" %>
+      </h5>
     </div>
     <div class="list-group">
       <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
