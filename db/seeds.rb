@@ -65,7 +65,8 @@ puts "Created #{Politician.count} Politicians"
 User.create!([{
   name: "New User",
   email: "newuser@naughtylobby.com",
-  password: "123456"
+  password: "123456",
+  photo_url: "https://consequenceofsound.files.wordpress.com/2018/05/dr-evil.png"
 
 },
 {
