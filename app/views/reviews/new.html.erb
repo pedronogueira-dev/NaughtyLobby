@@ -1,9 +1,11 @@
 <div class="container">
   <h1>Review</h1>
-  <%= simple_form_for[@politician, @review] do |f| %>
-  <%= f.input :title %>
+  <%= simple_form_for [@politician, @review] do |f| %>
+  <div class="form-inline">
+    <%= f.input :title %>
+    <%= f.input :rating, collection: (0..10) %>
+  </div>
   <%= f.input :description %>
-  <%= f.select :rating  %>
   <%= f.submit "add a review", class: "btn btn-primary" %>
   <% end %>
 </div>
