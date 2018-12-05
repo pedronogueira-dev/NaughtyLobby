@@ -22,8 +22,8 @@ class MeetingsController < ApplicationController
       @meeting.destroy
       redirect_to :dashboard
     else
-      flash[:alert] = "The meeting was not deleted!"
       redirect_to :dashboard
+      flash[:alert] = "The meeting was not deleted!"
     end
   end
 
