@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  befor_action :get_politician, only: [:new, :create, :show]
+  before_action :get_politician, only: [:new, :create, :show]
   def index
   end
 
@@ -8,6 +8,7 @@ class ReviewsController < ApplicationController
   end
 
   def new
+
     @review = Review.new
   end
 
@@ -25,7 +26,7 @@ class ReviewsController < ApplicationController
 
   private
   def get_politician
-    @politician = Politician(params[:politician_id])
+    @politician = Politician.find(params[:politician_id])
   end
 
   def review_params
