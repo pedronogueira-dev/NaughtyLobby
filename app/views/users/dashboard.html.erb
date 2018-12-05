@@ -9,6 +9,7 @@
     <div class="col-sm-8">
       <div class="row">
         <div class="col-sm-6 text-center">
+          <h1>Here is who you own and when!</h1>
           <ul class="profile-item">
            <% @meetings.each do |meeting| %>
            <%= render "meetings/meeting", locals: {meeting: meeting} %>
@@ -16,6 +17,7 @@
          </ul>
        </div>
        <div class="col-sm-6 text-center">
+        <h1>Here are the votes you've boutght!</h1>
          <ul class="profile-item">
            <% @meetings.each do |meeting| %>
            <%= render "meetings/meeting", locals: {meeting: meeting} %>
