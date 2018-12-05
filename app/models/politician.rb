@@ -3,7 +3,7 @@ class Politician < ApplicationRecord
   has_many :meetings
   has_many :votes
 
-  validates :name,  presence: true
+  validates :name, presence: true
   validates :tag_line, presence: true
   validates :photo_url, presence: true
   validates :location, presence: true
