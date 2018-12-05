@@ -20,6 +20,14 @@
   border: white 1px solid;
 }
 
+.user-avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: white 1px solid;
+  box-shadow: 0 1px rgba(0,0,0,0.2);
+}
+
 .politician-avatar{
   position: absolute;
   width: 200px;

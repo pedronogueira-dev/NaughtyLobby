@@ -1,7 +1,11 @@
 .profile {
-  background-color: #ccffff;
-  display: flex;
+  background-color: #D3D3D3;
+  display: inline-flex;
   flex-direction: column;
   justify-content: center;
   border: solid;
+
+  .profile-name {
+    margin-top: 20px;
+  }
 }
