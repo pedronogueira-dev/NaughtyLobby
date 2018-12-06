@@ -75,8 +75,8 @@ politicians = [{
   current_salary: 100,
   vote_price: 1,
   daily_price: 1000,
-  tag_line: "I didn't do it",
-  general_description: "Leading Argentines to migrate to Europe",
+  tag_line: "A brief history of having cake and eating it",
+  general_description: "My friends, as I have discovered myself, there are no disasters, only opportunities. And, indeed, opportunities for fresh disasters.",
   location: "United Kingdom",
   photo_url: "https://res.cloudinary.com/pnogueira/image/upload/v1544107631/fj0721mnsuhirsxntrci.jpg"
 },
@@ -90,7 +90,41 @@ politicians = [{
   general_description: "Keeping my 10 books a day",
   location: "Portugal",
   photo_url: "https://res.cloudinary.com/pnogueira/image/upload/v1544107608/tfkctixuuktdyvm2ko8z.jpg"
-}]
+},
+{
+  name: "Donald Trump",
+  party: "Republican Party",
+  current_salary: 20000,
+  vote_price: 10000,
+  daily_price: 900000,
+  tag_line: "When you're famous, they let you do it",
+  general_description: "Only up for tremendous bribes, the biggest you've ever seen. Saving up for my Russian wedding.",
+  location: "United States",
+  photo_url: "https://res.cloudinary.com/pnogueira/image/upload/v1544107665/iqhykmshyiqk8ne96ltg.jpg"
+},
+{
+  name: "Vladimir Putin",
+  party: "United Russia",
+  current_salary: 20000,
+  vote_price: 10000,
+  daily_price: 900000,
+  tag_line: "In Sovietic Russia, Mafia has it's own Country",
+  general_description: "I am the wealthiest man, not just in Europe, but in the whole world. I collect emotions.",
+  location: "United States",
+  photo_url: "https://cdn3.img.sputniknews.com/images/105999/01/1059990139.jpg"
+},
+{
+  name: "Donaldski Trumpin",
+  party: "United Russia",
+  current_salary: 20000,
+  vote_price: 10000,
+  daily_price: 900000,
+  tag_line: "I don't know of this Donald Trump you're talking about",
+  general_description: "Its all lies, folks. Sad.",
+  location: "United States",
+  photo_url: "https://res.cloudinary.com/pnogueira/image/upload/v1544117260/2E3A10E700000578-3309310-image-a-13_1447000779068.jpg"
+}
+]
 
 politicians.each do |politician|
   p = Politician.new(politician)
