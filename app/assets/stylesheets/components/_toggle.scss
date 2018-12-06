@@ -68,6 +68,7 @@ input:checked + .slider:before {
   display: flex;
   justify-content: space-around;
   align-items: baseline;
+  margin: 10px;
 }
 
 .vote-yes {

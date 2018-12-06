@@ -1,0 +1,13 @@
+.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  padding: 4px 4px;
+  z-index: 1;
+  margin: 0px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}

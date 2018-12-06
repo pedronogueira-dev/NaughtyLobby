@@ -46,7 +46,9 @@
      <div class="col-sm-12 col-md-6">
       <div class="text-center">
         <div class="rate_all_reviews">
-          <h3> <%= @politician.name %> has <%= @politician.reviews.count %> Total Reviews</h3>
+          <div class="large-header">
+            <h3> <%= @politician.name %> has <%= @politician.reviews.count %> Total Reviews</h3>
+          </div>
           <% if @politician.reviews.empty? %>
           <h5>No reviews avaliable</h5>
           <% else %>
@@ -69,28 +71,43 @@
         <%= render 'reviews/review_list_item', locals: { politician:@politician, review: review }%>
         <% end %>
       </div>
-
- </div>
-
-
- <div class="col-sm-12 col-md-6">
-  <div>
-    <div class="text-center">
-      <h2> Cost to Rent per Day </h2>
-      <h4> <%= @politician.daily_price %> EUR</h4>
     </div>
-    <div>
-      <%= form_for([@politician, @meeting])do |f| %>
-      <%= f.date_field :start_date%>
-      <%= f.date_field :end_date%>
-      <%= f.submit "Rent", class: "btn btn-primary btn-sm" %>
-      <% end %>
-    </div>
-  </div>
-  <div>
-        <%= form_for([@politician, @vote])do |f| %>
-        <div>
-          <%= f.select :subject, Vote::SUBJECTS %> <br>
+
+    <div class="col-sm-12 col-md-6">
+      <div>
+        <div class="text-center">
+          <div class="large-header">
+            <h3>Rent My Time</h3>
+            <h4> <%= @politician.daily_price %> EUR</h4>
+          </div>
+        </div>
+        <div class="text-center">
+          <%= form_for([@politician, @meeting])do |f| %>
+          <%= f.date_field :start_date%>
+          <%= f.date_field :end_date%>
+          <%= f.submit "Rent", class: "btn btn-primary btn-sm" %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="spacer">
+      </div>
+
+      <div class="text-center" >
+        <div class="large-header">
+          <h3>Buy my Vote</h3>
+        </div>
+        <div class="small-header">
+          <p>What Issue Would you Like to Lobby?</p>
+        </div>
+        <div class="dropdown">
+          <%= form_for([@politician, @vote])do |f| %>
+          <div class="dropdown-content">
+            <p> <%= f.select :subject, Vote::SUBJECTS %> </p><br>
+          </div>
+        </div>
+        <div class="small-header">
+          <p>How should I vote?</p>
         </div>
         <div class="toggle-container">
           <div class=“vote-yes”>
@@ -105,10 +122,11 @@
        </div>
      </div>
      <div>
-       <%= f.submit "Click to Buy My Vote", class: "btn btn-primary btn-lg algin-content align-middle" %>
-       <% end %>
      </div>
+     <%= f.submit "Click to Buy My Vote", class: "btn btn-primary btn-lg algin-content align-middle" %>
+     <% end %>
    </div>
+ </div>
 </div>
 </div>
 </div>
