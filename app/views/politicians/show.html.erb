@@ -2,105 +2,121 @@
 <div class="politician-header">
   <div class="loction-photo" style="background: linear-gradient(to bottom,rgba(20,20,20, 0.8),rgba(76,76,76,0.2) 30%), url(<%= image_path 'moscow.jpg' %>) center / cover no-repeat;">
   </div>
+</div>
+
+<div class="buffer">
   <div>
    <%= image_tag(@politician.photo_url, :class => "politician-avatar")%>
  </div>
 </div>
 
-<div class="buffer">
+<div class="spacer">
 </div>
-
 
 <div class="wrapper">
+
   <div class="container text-center">
     <div class="row">
-      <div class="col-sm-12 bottom-border">
+      <div class="col-sm-6">
+        <div class="list-inline name">
+          <li class="first-name"><%= @politician.name.split(' ').first %></li>
+          <li class="last-name"><%= @politician.name.split(' ').last %></li>
+        </div>
+        <p class="party">Party: <%= @politician.party %></p>
+      </div>
+      <div class="col-sm-6">
         <div class="politicain-about">
-         <h1 class="name"><%= @politician.name %></h1>
-         <h3class="tagline"><%= @politician.tag_line %></h3>
-         <p class="description text-center"> <%= @politician.general_description %></p>
-         <p class="party">(<%= @politician.party %>)</p>
-       </div>
-     </div>
-   </div>
- </div>
-<%= render 'shared/flashes' %>
-
- <div class="container align-content">
-  <div class="row">
-   <div class="col-sm-12 col-md-6">
-    <div class="text-center">
-      <h3> <%= @politician.name %> has 32 Total Reviews</h3>
-      <h5> Average Rating of 2.2</h5>
-      <h5> Average Verified Rating of 8.2</h5>
-      <h5>
-      <%= link_to "Add a Review", new_politician_review_path(@politician), class: "btn btn-primary btn-lg" %>
-      </h5>
-    </div>
-    <div class="list-group">
-      <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
-        <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">List group item heading</h5>
-          <small>3 days ago</small>
+          <div>
+            <p class="subtext">Their life in a nutshell</p>
+            <p class="tagline"><%= @politician.tag_line %></p>
+          </div>
+          <div>
+            <p class="subtext">What they won't stop talking about</p>
+            <p class="description"><%= @politician.general_description %></p>
+          </div>
         </div>
-        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-        <small>Donec id elit non mi porta.</small>
-      </a>
-      <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-        <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">List group item heading</h5>
-          <small class="text-muted">3 days ago</small>
-        </div>
-        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-        <small class="text-muted">Donec id elit non mi porta.</small>
-      </a>
-      <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-        <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">List group item heading</h5>
-          <small class="text-muted">3 days ago</small>
-        </div>
-        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-        <small class="text-muted">Donec id elit non mi porta.</small>
-      </a>
+      </div>
     </div>
   </div>
-  <div class="col-sm-12 col-md-6">
-    <div>
+
+  <div class="buffer-politician">
+  </div>
+
+  <div class="container align-content">
+    <div class="row">
+     <div class="col-sm-12 col-md-6">
       <div class="text-center">
-        <h2> Cost to Rent per Day </h2>
-        <h4> <%= @politician.daily_price %> EUR</h4>
+        <h3> <%= @politician.name %> has 32 Total Reviews</h3>
+        <h5> Average Rating of 2.2</h5>
+        <h5> Average Verified Rating of 8.2</h5>
+        <h5>
+          <%= link_to "Add a Review", new_politician_review_path(@politician), class: "btn btn-primary btn-lg" %>
+        </h5>
       </div>
-      <div>
-        <%= form_for([@politician, @meeting])do |f| %>
-        <%= f.date_field :start_date%>
-        <%= f.date_field :end_date%>
-        <%= f.submit "Rent", class: "btn btn-primary btn-sm" %>
-          <% end %>
+      <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">List group item heading</h5>
+            <small>3 days ago</small>
+          </div>
+          <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+          <small>Donec id elit non mi porta.</small>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">List group item heading</h5>
+            <small class="text-muted">3 days ago</small>
+          </div>
+          <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+          <small class="text-muted">Donec id elit non mi porta.</small>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">List group item heading</h5>
+            <small class="text-muted">3 days ago</small>
+          </div>
+          <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+          <small class="text-muted">Donec id elit non mi porta.</small>
+        </a>
       </div>
     </div>
-    <div>
-      <div class="text-center">
-        <h2> Cost to Buy My Vote </h2>
-        <h4> <%= @politician.vote_price %> EUR or Crimeria </h4>
-      </div>
-      <div class="toggle-container">
-        <div class="vote-yes">
-          <h4> Vote For </h4>
+    <div class="col-sm-12 col-md-6">
+      <div>
+        <div class="text-center">
+          <h2> Cost to Rent per Day </h2>
+          <h4> <%= @politician.daily_price %> EUR</h4>
         </div>
         <div>
-          <label class="switch">
-            <input type="checkbox">
-            <span class="slider round"></span>
-          </label>
-        </div>
-        <div class="vote-no">
-          <h4> Vote Against </h4>
+          <%= form_for([@politician, @meeting])do |f| %>
+          <%= f.date_field :start_date%>
+          <%= f.date_field :end_date%>
+          <%= f.submit "Rent", class: "btn btn-primary btn-sm" %>
+          <% end %>
         </div>
       </div>
       <div>
-        <button type="button" class="btn btn-primary btn-lg algin-content align-middle ">Click to Buy My Vote</button>
+        <div class="text-center">
+          <h2> Cost to Buy My Vote </h2>
+          <h4> <%= @politician.vote_price %> EUR or Crimeria </h4>
+        </div>
+        <div class="toggle-container">
+          <div class="vote-yes">
+            <h4> Vote For </h4>
+          </div>
+          <div>
+            <label class="switch">
+              <input type="checkbox">
+              <span class="slider round"></span>
+            </label>
+          </div>
+          <div class="vote-no">
+            <h4> Vote Against </h4>
+          </div>
+        </div>
+        <div>
+          <button type="button" class="btn btn-primary btn-lg algin-content align-middle ">Click to Buy My Vote</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
