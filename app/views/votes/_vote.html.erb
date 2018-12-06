@@ -1,11 +1,11 @@
 <div class='vote'>
-  <li class="list-group-item">
-    <% vote = locals[:vote] %>
-    <span>With: <%= vote.politician.name %></span><br>
-    <span>Subject: <%= vote.subject %></span> <br>
-    <span>Position: <%= vote.position %></span>
-    <%= link_to "", vote_path(vote),
-    method: :delete,
-    data: { confirm: "Are you sure?" },class: "far fa-trash-alt" %>
-  </li>
+<li>
+<% vote = locals[:vote] %>
+<span>From: <%= vote.politician.name %></span><br>
+<span>Position: <%= vote.position %></span> <br>
+<span>Subject: <%= vote.subject %></span>
+<%= link_to "", vote_path(vote),
+      method: :delete,
+      data: { confirm: "Are you sure?" },class: "far fa-trash-alt" %>
+</li>
 </div>
