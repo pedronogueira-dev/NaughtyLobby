@@ -1,10 +1,15 @@
-<h1>Reviews#show</h1>
-<p>Find me in app/views/reviews/show.html.erb</p>
-<div class="container">
+<div class="wrapper review">
+  <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-md-6">
+      <% if @review.used_services %>
+      <div class="verified_review">
+          <i class="fa fa-check"></i>
+      </div>
+    <% end %>
       <div class="review-title">
-        <%= @review.title %>
+        <span><h3>Title:</h3></span>
+        <span><%= @review.title %></span>
       </div>
       <div class="review-rating">
         <%= @review.rating %>
@@ -16,7 +21,7 @@
       <%= @review.description %>
     </div>
     <div class="review-author">
-      @author.name
+      <%= @review.user.name %>
     </div>
   </div>
   <div class="row">
@@ -24,4 +29,5 @@
       <%= link_to "back", politician_path(@politician)%>
     </div>
   </div>
+</div>
 </div>

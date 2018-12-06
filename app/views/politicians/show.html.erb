@@ -30,38 +30,29 @@
   <div class="row">
    <div class="col-sm-12 col-md-6">
     <div class="text-center">
-      <h3> <%= @politician.name %> has 32 Total Reviews</h3>
-      <h5> Average Rating of 2.2</h5>
-      <h5> Average Verified Rating of 8.2</h5>
+      <div class="rate_all_reviews">
+        <h3> <%= @politician.name %> has 32 Total Reviews</h3>
+      <% if @politician.reviews.empty? %>
+        <h5>No reviews avaliable</h5>
+      <% else %>
+        <h5> <%= @politician.avg_rating %> out of 10 </h5>
+      <% end %>
+      </div>
+      <div class="rate_verified_reviews">
+        <% if @politician.verified_reviews.empty? %>
+        <h5> No verified reviews avaliable</h5>
+      <% else %>
+        <h5> Average Verified Rating of <%= @politician.avg_rating(@politician.verified_reviews) %></h5>
+      <% end %>
       <h5>
+      </div>
       <%= link_to "Add a Review", new_politician_review_path(@politician), class: "btn btn-primary btn-lg" %>
       </h5>
     </div>
-    <div class="list-group">
-      <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
-        <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">List group item heading</h5>
-          <small>3 days ago</small>
-        </div>
-        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-        <small>Donec id elit non mi porta.</small>
-      </a>
-      <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-        <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">List group item heading</h5>
-          <small class="text-muted">3 days ago</small>
-        </div>
-        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-        <small class="text-muted">Donec id elit non mi porta.</small>
-      </a>
-      <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-        <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">List group item heading</h5>
-          <small class="text-muted">3 days ago</small>
-        </div>
-        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-        <small class="text-muted">Donec id elit non mi porta.</small>
-      </a>
+    <div class="list-group review-list">
+      <% @politician.reviews.order("created_at DESC").each do |review| %>
+        <%= render 'reviews/review_list_item', locals: { politician:@politician, review: review }%>
+      <% end %>
     </div>
   </div>
   <div class="col-sm-12 col-md-6">
