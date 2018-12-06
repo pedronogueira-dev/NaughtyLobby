@@ -29,6 +29,17 @@ class Politician < ApplicationRecord
     all.sort_by { |politician| - politician.avg_rating }
   end
 
+  def self.top(size)
+    query = "SELECT politicians.id, politicians.name, politicians.tag_line, politicians.photo_url, "\
+            "AVG(COALESCE(reviews.rating, 0)) as average "\
+            "FROM politicians "\
+            "LEFT JOIN reviews ON reviews.politician_id = politicians.id "\
+            "GROUP by politicians.id, politicians.name "\
+            "ORDER BY average DESC "\
+            "LIMIT #{size}"
+    Politician.find_by_sql(query)
+  end
+
   def verified_reviews
     reviews.where(used_services: true)
   end
