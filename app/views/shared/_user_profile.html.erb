@@ -2,7 +2,4 @@
   <div class="profile-pic">
     <%= render "shared/avatar", locals: { url: current_user.photo_url} unless current_user.photo_url.nil?  %>
   </div>
-  <div class="profile-name">
-    <p><%= current_user.name %></p>
-  </div>
 </div>
