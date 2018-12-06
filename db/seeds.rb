@@ -100,20 +100,33 @@ end
 
 puts "Created #{Politician.count} Politicians"
 users = [{
-  name: "New User",
-  email: "newuser@naughtylobby.com",
+  name: "Dr. Evil",
+  email: "minime@naughtylobby.com",
   password: "123456",
   photo_url: "https://res.cloudinary.com/pnogueira/image/upload/v1544110413/dr-evil.png"
 },
 {
-  name: "Old User",
-  email: "olduser@naughtylobby.com",
-  password: "000000"
+  name: "Rees Mogg",
+  email: "reesmogg@naughtylobby.com",
+  password: "tories_for_leave",
+  photo_url: "https://res.cloudinary.com/pnogueira/image/upload/v1544113039/jacob-rees-mogg-992306.jpg"
 },
 {
-  name: "Naughty User",
-  email: "naughtyuser@naughtylobby.com",
-  password: "naughty"
+  name: "Nigel Farage",
+  email: "farage@naughtylobby.com",
+  password: "british_empire",
+  photo_url: "https://res.cloudinary.com/pnogueira/image/upload/v1544112964/methode_2Fsundaytimes_2Fprod_2Fweb_2Fbin_2Ff9e2f128-9813-11e8-b2a8-453c9f590323.jpg"
+},
+{
+  name: "Kellyanne Conway",
+  email: "alternative_facts@naughtylobby.com",
+  password: "american_people",
+  photo_url: "https://res.cloudinary.com/pnogueira/image/upload/v1544113847/104264587-GettyImages-632386774.530x298.jpg"
+},
+{
+  name: "guest",
+  email: "guest@naughtylobby.com",
+  password: "guest"
 }
 ]
 
