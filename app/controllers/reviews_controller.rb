@@ -8,7 +8,6 @@ class ReviewsController < ApplicationController
   end
 
   def new
-
     @review = Review.new
   end
 
@@ -16,7 +15,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.politician = @politician
     @review.user = current_user
-
+    @review.used_services = @review.review_verified?
     if @review.save
       redirect_to politician_path(@politician)
     else
