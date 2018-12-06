@@ -78,7 +78,9 @@
         <div class="text-center">
           <div class="large-header">
             <h3>Rent My Time</h3>
-            <h4> <%= @politician.daily_price %> EUR</h4>
+          </div>
+          <div>
+            <h5> Cost per day: <strong><%= @politician.daily_price %> </strong> EUR</h5>
           </div>
         </div>
         <div class="text-center">
@@ -97,6 +99,9 @@
         <div class="large-header">
           <h3>Buy my Vote</h3>
         </div>
+        <div>
+            <h5> Cost to Lobby: <strong><%= @politician.vote_price %> </strong> EUR</h5>
+          </div>
         <div class="small-header">
           <p>What Issue Would you Like to Lobby?</p>
         </div>
