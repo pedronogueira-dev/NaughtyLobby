@@ -6,7 +6,7 @@
 
 <div class="buffer">
   <div>
-   <%= image_tag(@politician.photo_url, :class => "politician-avatar")%>
+   <%= cl_image_tag(@politician.photo_url, :class => "politician-avatar")%>
  </div>
 </div>
 
@@ -47,7 +47,7 @@
      <div class="col-sm-12 col-md-6">
       <div class="text-center">
         <div class="rate_all_reviews">
-          <h3> <%= @politician.name %> has 32 Total Reviews</h3>
+          <h3> <%= @politician.name %> has <%= @politician.reviews.count %> Total Reviews</h3>
           <% if @politician.reviews.empty? %>
           <h5>No reviews avaliable</h5>
           <% else %>

@@ -25,9 +25,8 @@ User.destroy_all
   #last_name: last_name,
   #)
 #end
-
-Politician.create!([{
-  name: "Teresa May",
+politicians = [{
+  name: "Theresa May",
   party: "Tory",
   current_salary: 5000,
   vote_price: 1000,
@@ -46,7 +45,7 @@ Politician.create!([{
   tag_line: "Making Germany great again",
   general_description: "Leading Germany to a better Europe",
   location: "Germany",
-  photo_url: "http://theduran.com/wp-content/uploads/2017/02/Angela-Merkel.jpg"
+  photo_url: "https://res.cloudinary.com/pnogueira/image/upload/v1544107552/atdhaqhc1xavdpy7do5l.jpg"
 },
 {
   name: "Cristina Fernandez",
@@ -57,28 +56,86 @@ Politician.create!([{
   tag_line: "I didn't do it",
   general_description: "Leading Argentines to migrate to Europe",
   location: "Argentina",
-  photo_url: "https://upload.wikimedia.org/wikipedia/commons/2/22/Cristinakirchnermensaje2010.jpg"
-}])
+  photo_url: "https://res.cloudinary.com/pnogueira/image/upload/v1544107586/tnbjklbv7tzjvex0m8c8.jpg"
+},
+{
+  name: "Hillary Clinton",
+  party: "Democratic Party",
+  current_salary: 1,
+  vote_price: 50,
+  daily_price: 20,
+  tag_line: "Always a candidate, never the President",
+  general_description: "Ya'll know about my Goldman Sachs Speeches, pay me here or through my Foundation",
+  location: "United States of America",
+  photo_url: "https://res.cloudinary.com/pnogueira/image/upload/v1544107686/rdsyarhj4lcfo5ldgipb.jpg"
+},
+{
+  name: "Boris Johnson",
+  party: "Tory Party",
+  current_salary: 100,
+  vote_price: 1,
+  daily_price: 1000,
+  tag_line: "I didn't do it",
+  general_description: "Leading Argentines to migrate to Europe",
+  location: "United Kingdom",
+  photo_url: "https://res.cloudinary.com/pnogueira/image/upload/v1544107631/fj0721mnsuhirsxntrci.jpg"
+},
+{
+  name: "Marcelo Rebelo de Sousa",
+  party: "Social Democrat Party",
+  current_salary: 100000,
+  vote_price: 100,
+  daily_price: 90,
+  tag_line: "The president has to unite, build bridges",
+  general_description: "Keeping my 10 books a day",
+  location: "Portugal",
+  photo_url: "https://res.cloudinary.com/pnogueira/image/upload/v1544107608/tfkctixuuktdyvm2ko8z.jpg"
+}]
+
+politicians.each do |politician|
+  p = Politician.new(politician)
+  p.remote_photo_url_url = politician[:photo_url] if politician.key?(:photo_url)
+  p.save
+end
 
 puts "Created #{Politician.count} Politicians"
-
-User.create!([{
-  name: "New User",
-  email: "newuser@naughtylobby.com",
+users = [{
+  name: "Dr. Evil",
+  email: "minime@naughtylobby.com",
   password: "123456",
-  photo_url: "https://consequenceofsound.files.wordpress.com/2018/05/dr-evil.png"
+  photo_url: "https://res.cloudinary.com/pnogueira/image/upload/v1544110413/dr-evil.png"
+},
+{
+  name: "Rees Mogg",
+  email: "reesmogg@naughtylobby.com",
+  password: "tories_for_leave",
+  photo_url: "https://res.cloudinary.com/pnogueira/image/upload/v1544113039/jacob-rees-mogg-992306.jpg"
+},
+{
+  name: "Nigel Farage",
+  email: "farage@naughtylobby.com",
+  password: "british_empire",
+  photo_url: "https://res.cloudinary.com/pnogueira/image/upload/v1544112964/methode_2Fsundaytimes_2Fprod_2Fweb_2Fbin_2Ff9e2f128-9813-11e8-b2a8-453c9f590323.jpg"
+},
+{
+  name: "Kellyanne Conway",
+  email: "alternative_facts@naughtylobby.com",
+  password: "american_people",
+  photo_url: "https://res.cloudinary.com/pnogueira/image/upload/v1544113847/104264587-GettyImages-632386774.530x298.jpg"
+},
+{
+  name: "guest",
+  email: "guest@naughtylobby.com",
+  password: "guest"
+}
+]
 
-},
-{
-  name: "Old User",
-  email: "olduser@naughtylobby.com",
-  password: "000000"
-},
-{
-  name: "Naughty User",
-  email: "naughtyuser@naughtylobby.com",
-  password: "naughty"
-}])
+users.each do |user|
+  u = User.new(user)
+  u.remote_photo_url_url = user[:photo_url]  if user.key?(:photo_url)
+  u.save
+end
+
 
 puts "Created #{User.count} New Users"
 
