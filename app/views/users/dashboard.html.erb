@@ -1,4 +1,4 @@
-
+<%= render 'shared/flashes' %>
 <div class="wrapper">
   <div class="row">
     <div class="col-sm-4 text-center">
@@ -19,8 +19,8 @@
        <div class="col-sm-6 text-center">
         <h1>Here are the votes you've boutght!</h1>
          <ul class="profile-item">
-           <% @meetings.each do |meeting| %>
-           <%= render "meetings/meeting", locals: {meeting: meeting} %>
+           <% @votes.each do |vote| %>
+           <%= render "votes/vote", locals: {vote: vote} %>
            <% end %>
          </ul>
        </div>
