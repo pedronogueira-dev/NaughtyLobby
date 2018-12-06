@@ -3,23 +3,23 @@
   <div class="row">
     <div class="col-sm-4 text-center">
       <%= render "shared/user_profile" %>
-      <h1>Name</h1>
+      <h1><%= current_user.name %></h1>
       <h1>Other Shit</h1>
     </div>
     <div class="col-sm-8">
       <div class="row">
         <div class="col-sm-6 text-center">
-          <h1>Here is who you own and when!</h1>
-          <ul class="profile-item">
+          <h3>Here is who you own and when!</h3>
+          <ul class="profile-item list-group">
            <% @meetings.each do |meeting| %>
            <%= render "meetings/meeting", locals: {meeting: meeting} %>
            <% end %>
          </ul>
        </div>
        <div class="col-sm-6 text-center">
-        <h1>Here are the votes you've boutght!</h1>
-         <ul class="profile-item">
-           <% @meetings.each do |meeting| %>
+        <h3>Here are the votes you've boutght!</h3>
+         <ul class="profile-item list-group">
+           <% @votes.each do |meeting| %>
            <%= render "meetings/meeting", locals: {meeting: meeting} %>
            <% end %>
          </ul>
