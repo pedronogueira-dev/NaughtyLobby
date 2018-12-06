@@ -1,9 +1,7 @@
 .profile {
-  background-color: #D3D3D3;
   // display: inline-flex;
   // flex-direction: column;
   // justify-content: center;
-  border: solid;
   // flex-grow: 1;
 
   .profile-name {
@@ -11,11 +9,21 @@
   }
 }
 
-.profile-stats {
-  width: 400px;
-  border: solid black 4px;
+.profile-summary {
+  background-color: white;
+  padding: 20px;
+  margin: 10px;
 }
 
-.profile-item{
+.list-summary {
+  flex: 1 0 auto;
+}
 
+.user-profile {
+  margin-left: 40px;
+}
+
+.list-summary h4 {
+padding-bottom: 10px;
+font-weight: bold;
 }

@@ -88,10 +88,52 @@
   border-bottom: 1px solid black;
 }
 
-.container {
-  background-color: white;
-}
-
 #name_query {
   border-radius: 40px;
 }
+
+.first-name {
+  font-size: 48px;
+  font-weight: lighter;
+  color: #303030;
+}
+
+.last-name {
+  font-size: 48px;
+  font-weight: bold;
+  color: #aa2e2e;
+}
+
+.party {
+  font-style: italic;
+  color: #303030;
+}
+
+.tagline {
+  color: #303030;
+  font-size: 22px;
+  color: #aa2e2e;
+}
+
+.description {
+  color: #303030;
+  font-size: 22px;
+  color: #aa2e2e;
+}
+
+.politicain-about {
+  background-color: #f9f9f9;
+  padding: 1px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.subtext {
+  font-weight: lighter;
+  color: #303030;
+  font-style: italic;
+  margin: 0px;
+  size: 12px;
+}
+
+
