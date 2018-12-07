@@ -1,32 +1,43 @@
-<div class="wrapper review">
-  <div class="container">
+<div class="container review-container">
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-6">
-      <% if @review.used_services %>
-      <div class="verified_review">
-          <i class="fa fa-check"></i>
+    <div class="col-sm-3 user-column">
+      <div class="review-user text-center">
+        <h4 class="user-name"> <%= @review.user.name %></h4>
+        <span> <%= cl_image_tag @review.user.photo_url, class: "review-avatar"%></span>
+        <p>Verified?
+          <% if @review.used_services %>
+            <div class="verified_review">
+              <i class="fa fa-check"></i>
+            </div>
+            <% else %>
+            <div class="verified_review">
+              <i class="fas fa-times"></i>
+            </div>
+          <% end %>
+        </p>
       </div>
-    <% end %>
-      <div class="review-title">
-        <span><h3>Title:</h3></span>
-        <span><%= @review.title %></span>
+    </div>
+      <div class="col-sm-9 review-column">
+        <div class="review-title">
+          <%= @review.title.split(' ').map(&:capitalize).join(' ') %>
+        </div>
+        <div class="text-right">
+          <% @review.rating.times do  %>
+            <i class="fas fa-hand-holding-usd red-stars"></i>
+          <% end %>
+          <% (10 - @review.rating).times do  %>
+            <i class="fas fa-hand-holding-usd grey-stars"></i>
+          <% end %>
+        </div>
+
+        <div class="review-content">
+          <%= @review.description %>
+        </div>
       </div>
-      <div class="review-rating">
-        <%= @review.rating %>
+    </div>
+      <div class="btn btn-primary btn-sm">
+        <%= link_to "back", politician_path(@politician)%>
       </div>
-    </div>
   </div>
-  <div class="row">
-    <div class="review-description">
-      <%= @review.description %>
-    </div>
-    <div class="review-author">
-      <%= @review.user.name %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col sm-3 col-offset-4">
-      <%= link_to "back", politician_path(@politician)%>
-    </div>
-  </div>
-</div>
+
+
