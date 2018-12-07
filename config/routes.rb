@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   patch 'users/:id', to: 'users#upload', as: :user
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :tweets, only: [:index]
   resources :politicians, only: [:index, :show] do
     member do
       get 'search_by_name', to: 'politicians#search_by_name'
