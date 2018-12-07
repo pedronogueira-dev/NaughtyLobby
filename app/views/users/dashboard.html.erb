@@ -1,4 +1,4 @@
-
+<%= render 'shared/flashes' %>
 <div class="wrapper">
   <div class="row">
     <div class="col-sm-4 text-center">
@@ -11,8 +11,8 @@
           <%= link_to "Edit profile picture", edit_user_path(current_user) %>
         </div>
         <div class="profile-summary">
-        <%= link_to "See The Naughty Lobby", politicians_path, class: "btn btn-primary btn-lg" %>
-      </div>
+          <%= link_to "See The Naughty Lobby", politicians_path, class: "btn btn-primary btn-lg" %>
+        </div>
       </div>
     </div>
     <div class="col-sm-8">
@@ -20,6 +20,7 @@
         <div class="col-sm-6 text-center">
           <div class="profile-summary list-summary">
             <h4>Here is who you own and when!</h4>
+            <h6>(Click to delete)</h6>
             <ul class="profile-item list-group">
              <% @meetings.each do |meeting| %>
              <%= render "meetings/meeting", locals: {meeting: meeting} %>
@@ -29,7 +30,8 @@
        </div>
        <div class="col-sm-6 text-center">
         <div class="profile-summary list-summary">
-          <h4>Here are the votes you've boutght!</h4>
+          <h4>Here are the votes you've bought!</h4>
+          <h6>(Click to delete)</h6>
           <ul class="profile-item list-group">
            <% @votes.each do |vote| %>
            <%= render "votes/vote", locals: {vote: vote} %>
@@ -38,4 +40,5 @@
        </div>
      </div>
    </div>
+ </div>
 </div>

@@ -31,5 +31,6 @@ Rails.application.routes.draw do
   get :dashboard, to: 'users#dashboard'
 
   delete 'meeting/:id', to: 'meetings#destroy', as: :meeting
-  delete :vote, to: 'votes#destroy'
+  delete 'vote/:id', to: 'votes#destroy', as: :vote
+
 end

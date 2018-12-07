@@ -11,5 +11,6 @@ class PoliticiansController < ApplicationController
   def show
     @politician = Politician.find(params[:id])
     @meeting = Meeting.new
+    @vote = Vote.new
   end
 end

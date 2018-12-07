@@ -8,10 +8,11 @@ class MeetingsController < ApplicationController
     @meeting.user = current_user
 
     if @meeting.save
-      flash[:notice] = "You have submited the information successfully!"
       redirect_to :dashboard
+      flash[:notice] = "You have submited the information successfully!"
     else
       redirect_to politician_path(@politician)
+      flash[:alert] = "You cant rent that!"
     end
   end
 

@@ -1,11 +1,11 @@
-<div class='meeting '>
-  <li class="list-group-item">
-    <% meeting = locals[:meeting] %>
-    <span>With: <%= meeting.politician.name %></span><br>
-    <span>From: <%= meeting.start_date %></span> <br>
-    <span>To: <%= meeting.end_date %></span>
-    <%= link_to "", meeting_path(meeting),
-    method: :delete,
-    data: { confirm: "Are you sure?" },class: "far fa-trash-alt" %>
-  </li>
-</div>
+<% meeting = locals[:meeting] %>
+<%= link_to meeting_path(meeting), method: :delete,
+      data: { confirm: "Are you sure?" } do %>
+  <div class='meeting'>
+    <li class="list-group-item">
+      <span>With: <%= meeting.politician.name %></span><br>
+      <span>From: <%= meeting.start_date %></span> <br>
+      <span>To: <%= meeting.end_date %></span>
+    </li>
+  </div>
+<% end  %>

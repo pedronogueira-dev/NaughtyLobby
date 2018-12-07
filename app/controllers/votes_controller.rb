@@ -1,6 +1,7 @@
 class VotesController < ApplicationController
   def create
     @vote = Vote.new(vote_params)
+
     @politician = Politician.find(params[:politician_id])
 
     @vote.politician = @politician
@@ -10,6 +11,7 @@ class VotesController < ApplicationController
       flash[:notice] = "You have submited the information successfully!"
       redirect_to :dashboard
     else
+      flash[:alert] = "You already bought this vote!"
       redirect_to politician_path(@politician)
     end
   end
@@ -18,16 +20,15 @@ class VotesController < ApplicationController
     @vote = Vote.find(params[:id])
     if current_user == @vote.user
       @vote.destroy
-      redirect_to :dashboard
     else
-      redirect_to :dashboard
-      flash[:alert] = "The vote was not deleted"
+      flash[:alert] = "You do not have permission to delete this vote!"
     end
+    redirect_to :dashboard
   end
 
   private
 
   def vote_params
-    params.require(:vote).permit(:position, :subject, :user, :politician)
+    params.require(:vote).permit(:position, :subject)
   end
 end
