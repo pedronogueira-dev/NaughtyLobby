@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2018_12_07_122327) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
-    t.string "photo_url", default: "https://res.cloudinary.com/pnogueira/image/upload/v1544107811/yx1ufebh4xkwcre1xiih.png"
+    t.string "photo_url", default: "https://github.com/Code-hound/NaughtyLobby/blob/master/app/assets/images/nl_logo.png"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
