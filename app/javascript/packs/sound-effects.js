@@ -14,4 +14,19 @@ const excellentHandler = () => {
 };
 
 
-export { excellentHandler };
+const firedHandler = () => {
+  document.querySelectorAll(".fire-btn").forEach((button) => {
+    console.log("added sound effect listenner")
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      //debugger;
+      //const audio = new Audio('../../assets/audios/excellent.wav');
+      //audio.play();
+      document.getElementById("fire").play();
+      setTimeout(() => {event.target.parentElement.submit();}, 1000);
+
+    });
+  });
+};
+
+export { excellentHandler, firedHandler };

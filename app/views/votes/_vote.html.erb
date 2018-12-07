@@ -2,7 +2,7 @@
 <%= link_to vote_path(vote), method: :delete,
         data: { confirm: "Are you sure?" } do %>
   <div class='vote'>
-    <li class="list-group-item">
+    <li class="list-group-item fire-btn">
       <span>From: <%= vote.politician.name %></span><br>
       <span>Position: <%= vote.position ? "Against" : "For" %></span> <br>
       <span>Subject: <%= vote.subject %></span>
