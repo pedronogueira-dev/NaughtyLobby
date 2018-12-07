@@ -2,7 +2,7 @@
 <%= link_to meeting_path(meeting), method: :delete,
       data: { confirm: "Are you sure?" } do %>
   <div class='meeting'>
-    <li class="list-group-item">
+    <li class="list-group-item fire-btn">
       <span>With: <%= meeting.politician.name %></span><br>
       <span>From: <%= meeting.start_date %></span> <br>
       <span>To: <%= meeting.end_date %></span>
