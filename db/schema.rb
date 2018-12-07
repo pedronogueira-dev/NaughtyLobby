@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_05_151239) do
+ActiveRecord::Schema.define(version: 2018_12_07_122327) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2018_12_05_151239) do
     t.string "photo_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "banner"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -62,7 +63,7 @@ ActiveRecord::Schema.define(version: 2018_12_05_151239) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
-    t.string "photo_url", default: "https://res.cloudinary.com/pnogueira/image/upload/v1544107811/yx1ufebh4xkwcre1xiih.png"
+    t.string "photo_url", default: "https://github.com/Code-hound/NaughtyLobby/blob/master/app/assets/images/nl_logo.png"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -1,5 +1,5 @@
 <div class="politician-header">
-  <div class="loction-photo" style="background: linear-gradient(to bottom,rgba(20,20,20, 0.8),rgba(76,76,76,0.2) 30%), url(<%= image_path 'moscow.jpg' %>) center / cover no-repeat;">
+  <div class="loction-photo" style="background: linear-gradient(to bottom,rgba(20,20,20, 0.8),rgba(76,76,76,0.2) 30%), url(<%= cl_image_path @politician.banner %>) center/ cover no-repeat;">
   </div>
 </div>
 <div class="buffer">
@@ -87,7 +87,7 @@
           <%= form_for([@politician, @meeting])do |f| %>
           <%= f.date_field :start_date%>
           <%= f.date_field :end_date%>
-          <%= f.submit "Rent", class: "btn btn-primary btn-sm" %>
+          <%= f.submit "Rent", class: "btn btn-primary btn-sm service-btn" %>
           <% end %>
         </div>
       </div>
@@ -128,9 +128,10 @@
      </div>
      <div>
      </div>
-     <%= f.submit "Click to Buy My Vote", class: "btn btn-primary btn-lg algin-content align-middle" %>
+     <%= f.submit "Click to Buy My Vote", class: "btn btn-primary btn-lg algin-content align-middle service-btn"%>
      <% end %>
    </div>
+         <%= audio_tag 'excellent.wav', id: "excellent" %>
  </div>
 </div>
 </div>

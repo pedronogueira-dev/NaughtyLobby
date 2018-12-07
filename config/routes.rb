@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   # get 'politicians/search_by_name'
   devise_for :users
   root to: 'pages#home'
+  get 'users/:id/edit', to: 'users#edit', as: :edit_user
+  patch :dashboard, to: 'users#upload', as: :upload_photo
+  patch 'users/:id', to: 'users#upload', as: :user
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :tweets, only: [:index]

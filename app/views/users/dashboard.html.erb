@@ -1,5 +1,6 @@
 <%= render 'shared/flashes' %>
 <div class="wrapper">
+  <div class="spacer"></div>
   <div class="row">
     <div class="col-sm-4 text-center">
       <div class="profile-summary user-profile">
@@ -8,9 +9,10 @@
           <li class="first-name"><%= current_user.name.split(' ').first %></li>
           <li class="last-name"><%= current_user.name.split(' ').last %></li>
           <h5>email: <%= current_user.email %></h5>
+          <%= link_to "Upload new profile picture", edit_user_path(current_user), class: "btn btn-primary btn-lg" %>
         </div>
         <div class="profile-summary">
-          <%= link_to "See The Naughty Lobby", politicians_path, class: "btn btn-primary btn-lg" %>
+          <%= link_to "See The Naughty Lobby", politicians_path, class: "btn btn-primary btn-lg other-btn" %>
         </div>
       </div>
     </div>

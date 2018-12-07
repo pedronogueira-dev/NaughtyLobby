@@ -9,7 +9,7 @@ class Politician < ApplicationRecord
   validates :location, presence: true
   validates :party, presence: true
   validates :current_salary, numericality: { only_integer: true, greater_than: 0 }
-
+  mount_uploader :banner, PhotoUploader
   mount_uploader :photo_url, PhotoUploader
   def avg_rating(review_list = reviews)
     # review_list = reviews
