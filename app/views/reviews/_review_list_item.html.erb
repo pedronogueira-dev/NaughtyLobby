@@ -1,17 +1,24 @@
+
+
 <div class="review_list_item">
   <%= link_to politician_review_path(locals[:politician],locals[:review]), {class: "list-group-item list-group-item-action flex-column align-items-start"} do %>
+  <div>
+    <div class="review-date">
+      <%= locals[:review].created_at.to_date %>
+    </div>
+    <small class="review-left"> Reivew Rating: <strong class="rating"> <%= locals[:review].rating %></strong> out of 10</small>
+    <% if locals[:review].used_services %>
+    <div class="verified_review">
+      <i class="fa fa-check icon-right"> </i>
+      <p class="verified-right"> Verified</p>
+    </div>
+    <% end %>
+  </div>
   <div class="d-flex w-100 justify-content-between">
-    <h5 class="mb-1"><%= locals[:review].title %></h5>
-    <small><%= locals[:review].rating %></small>
-  </div>
-  <% if locals[:review].used_services %>
-  <div class="verified_review">
-    <i class="fa fa-check"></i>
+    <h5 class="mb-1 title"><%= locals[:review].title %></h5>
+    <p class="mb-1 review-description"><%= locals[:review].description %></p>
   </div>
   <% end %>
-  <div class="review-date">
-    <%= locals[:review].created_at.to_date %>
-  </div>
-  <% end %>
+
 </div>
 

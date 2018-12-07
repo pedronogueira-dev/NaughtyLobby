@@ -4,5 +4,65 @@
   }
 }
 .active {
- background-color: blue;
+ background-color: #f9f9f9 !important;
+ color: black !important;
+ border-top: solid 4px #aa2e2e !important;
+ border-left: none !important;
+ border-right: none !important;
+ border-bottom: none !important;
+}
+
+.review-top {
+  position: absoulte;
+  margin-right: 20px;
+}
+
+.aboslute {
+  margin-left: 400px;
+}
+
+.review-left {
+  position: absoltue;
+  margin-left: 0px;
+  font-size: 16px;
+}
+
+.icon-right {
+  position: absoltue;
+  margin-left: 465px;
+  color: green;
+}
+
+.verified-right {
+  position: absoltue;
+  margin-left: 445px;
+  margin-top: -52px;
+  font-size: 14px;
+  font-style: italic;
+  color: green;
+}
+
+.review-date {
+  font-size: 14px;
+  font-style: italic;
+  color: grey;
+}
+
+.rating {
+  color: #aa2e2e;
+  font-weight: bold;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.review-description {
+  font-size: 14px;
+  font-weight: lighter;
+}
+
+.list-group-item {
+  border-bottom: 1px solid white !important;
 }
