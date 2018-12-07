@@ -7,9 +7,7 @@
  background-color: #f9f9f9 !important;
  color: black !important;
  border-top: solid 4px #aa2e2e !important;
- border-left: none !important;
- border-right: none !important;
- border-bottom: none !important;
+  -webkit-transition: border-top 0.25s
 }
 
 .review-top {
@@ -64,5 +62,5 @@
 }
 
 .list-group-item {
-  border-bottom: 1px solid white !important;
+  border: none;
 }
