@@ -106,7 +106,7 @@
           <p>What Issue Would you Like to Lobby?</p>
         </div>
         <div class="dropdown">
-          <%= form_for([@politician, @vote])do |f| %>
+          <%= form_for([@politician, @vote]) do |f| %>
           <div class="dropdown-content">
             <p> <%= f.select :subject, Vote::SUBJECTS %> </p><br>
           </div>
@@ -128,7 +128,7 @@
      </div>
      <div>
      </div>
-     <%= f.submit "Click to Buy My Vote", class: "btn btn-primary btn-lg algin-content align-middle" %>
+     <%= f.submit "Click to Buy My Vote", class: "btn btn-primary btn-lg algin-content align-middle service-vote-btn" %>
      <% end %>
    </div>
          <%= audio_tag 'excellent.wav', id: "excellent" %>
