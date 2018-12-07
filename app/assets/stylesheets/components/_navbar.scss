@@ -90,16 +90,29 @@
   color: #da552f;
 }
 
-.logo-name-first {
+.logo-name {
   position: absolute;
-  margin-left: -320px;
+  margin-left: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -5px;
+}
+
+.logo-name-first {
+  position: relative;
   font-weight: lighter;
-  margin-top: -4px;
+  font-size: 32px;
+  margin-bottom: 0px;
+  margin-top: 0px;
 }
 
 .logo-name-last {
-  position: absolute;
+  position: relative;
   color: #aa2e2e;
-  margin-left: -195px;
-  margin-top: -29px;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: -15px;
+  margin-top: 0px;
+  text-decoration: dashed underline;
 }
