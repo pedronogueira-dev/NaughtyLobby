@@ -19,6 +19,7 @@
         <div class="col-sm-6 text-center">
           <div class="profile-summary list-summary">
             <h4>Here is who you own and when!</h4>
+            <h6>(Click to delete)</h6>
             <ul class="profile-item list-group">
              <% @meetings.each do |meeting| %>
              <%= render "meetings/meeting", locals: {meeting: meeting} %>
@@ -29,6 +30,7 @@
        <div class="col-sm-6 text-center">
         <div class="profile-summary list-summary">
           <h4>Here are the votes you've bought!</h4>
+          <h6>(Click to delete)</h6>
           <ul class="profile-item list-group">
            <% @votes.each do |vote| %>
            <%= render "votes/vote", locals: {vote: vote} %>
