@@ -34,7 +34,8 @@ politicians = [{
   tag_line: "You won't do better without me",
   general_description: "Leading the U.K. to a better Europe",
   location: "United Kingdom",
-  photo_url: "http://i2.cdn.cnn.com/cnnnext/dam/assets/170124125305-theresa-may-super-tease.jpg"
+  photo_url: "http://i2.cdn.cnn.com/cnnnext/dam/assets/170124125305-theresa-may-super-tease.jpg",
+  banner: "https://res.cloudinary.com/pnogueira/image/upload/v1544129333/Social-and-Local-Palace-of-Westminster-Case-Study.jpg"
 },
 {
   name: "Angela Merkel",
@@ -45,7 +46,8 @@ politicians = [{
   tag_line: "Making Germany great again",
   general_description: "Leading Germany to a better Europe",
   location: "Germany",
-  photo_url: "https://res.cloudinary.com/pnogueira/image/upload/v1544107552/atdhaqhc1xavdpy7do5l.jpg"
+  photo_url: "https://res.cloudinary.com/pnogueira/image/upload/v1544107552/atdhaqhc1xavdpy7do5l.jpg",
+  banner: "https://res.cloudinary.com/pnogueira/image/upload/v1544128377/berlin.jpg"
 },
 {
   name: "Cristina Fernandez",
@@ -56,7 +58,8 @@ politicians = [{
   tag_line: "I didn't do it",
   general_description: "Leading Argentines to migrate to Europe",
   location: "Argentina",
-  photo_url: "https://res.cloudinary.com/pnogueira/image/upload/v1544107586/tnbjklbv7tzjvex0m8c8.jpg"
+  photo_url: "https://res.cloudinary.com/pnogueira/image/upload/v1544107586/tnbjklbv7tzjvex0m8c8.jpg",
+  banner: "https://res.cloudinary.com/pnogueira/image/upload/v1544129218/argentina-city-night.adapt.945.1.jpg"
 },
 {
   name: "Hillary Clinton",
@@ -67,7 +70,8 @@ politicians = [{
   tag_line: "Always a candidate, never the President",
   general_description: "Ya'll know about my Goldman Sachs Speeches, pay me here or through my Foundation",
   location: "United States of America",
-  photo_url: "https://res.cloudinary.com/pnogueira/image/upload/v1544107686/rdsyarhj4lcfo5ldgipb.jpg"
+  photo_url: "https://res.cloudinary.com/pnogueira/image/upload/v1544107686/rdsyarhj4lcfo5ldgipb.jpg",
+  banner: "https://res.cloudinary.com/pnogueira/image/upload/v1544128715/White_House_DC.0.0.webp"
 },
 {
   name: "Boris Johnson",
@@ -78,7 +82,8 @@ politicians = [{
   tag_line: "A brief history of having cake and eating it",
   general_description: "My friends, as I have discovered myself, there are no disasters, only opportunities. And, indeed, opportunities for fresh disasters.",
   location: "United Kingdom",
-  photo_url: "https://res.cloudinary.com/pnogueira/image/upload/v1544107631/fj0721mnsuhirsxntrci.jpg"
+  photo_url: "https://res.cloudinary.com/pnogueira/image/upload/v1544186099/5714d4c51900002d0056b709.png",
+  banner: "https://res.cloudinary.com/pnogueira/image/upload/v1544187180/image.jpg"
 },
 {
   name: "Marcelo Rebelo de Sousa",
@@ -89,7 +94,8 @@ politicians = [{
   tag_line: "The president has to unite, build bridges",
   general_description: "Keeping my 10 books a day",
   location: "Portugal",
-  photo_url: "https://res.cloudinary.com/pnogueira/image/upload/v1544107608/tfkctixuuktdyvm2ko8z.jpg"
+  photo_url: "https://res.cloudinary.com/pnogueira/image/upload/v1544107608/tfkctixuuktdyvm2ko8z.jpg",
+  banner: "https://res.cloudinary.com/pnogueira/image/upload/v1544129293/Parque-Eduardo-VII.jpg"
 },
 {
   name: "Donald Trump",
@@ -100,7 +106,8 @@ politicians = [{
   tag_line: "When you're famous, they let you do it",
   general_description: "Only up for tremendous bribes, the biggest you've ever seen. Saving up for my Russian wedding.",
   location: "United States",
-  photo_url: "https://res.cloudinary.com/pnogueira/image/upload/v1544107665/iqhykmshyiqk8ne96ltg.jpg"
+  photo_url: "https://res.cloudinary.com/pnogueira/image/upload/v1544107665/iqhykmshyiqk8ne96ltg.jpg",
+  banner: "https://res.cloudinary.com/pnogueira/image/upload/v1544128879/MAC16_AMERICA_CAROUSEL.jpg"
 },
 {
   name: "Vladimir Putin",
@@ -111,7 +118,8 @@ politicians = [{
   tag_line: "In Sovietic Russia, Mafia has it's own Country",
   general_description: "I am the wealthiest man, not just in Europe, but in the whole world. I collect emotions.",
   location: "United States",
-  photo_url: "https://cdn3.img.sputniknews.com/images/105999/01/1059990139.jpg"
+  photo_url: "https://cdn3.img.sputniknews.com/images/105999/01/1059990139.jpg",
+  banner: "https://res.cloudinary.com/pnogueira/image/upload/v1544187273/BRITAIN-USA-DIPLOMACY-PROTEST.jpg"
 },
 {
   name: "Donaldski Trumpin",
@@ -122,13 +130,15 @@ politicians = [{
   tag_line: "I don't know of this Donald Trump you're talking about",
   general_description: "Its all lies, folks. Sad.",
   location: "United States",
-  photo_url: "https://res.cloudinary.com/pnogueira/image/upload/v1544117260/2E3A10E700000578-3309310-image-a-13_1447000779068.jpg"
+  photo_url: "https://res.cloudinary.com/pnogueira/image/upload/v1544117260/2E3A10E700000578-3309310-image-a-13_1447000779068.jpg",
+  banner: "https://res.cloudinary.com/pnogueira/image/upload/v1544129100/Ql85a41.jpg"
 }
 ]
 
 politicians.each do |politician|
   p = Politician.new(politician)
   p.remote_photo_url_url = politician[:photo_url] if politician.key?(:photo_url)
+  p.remote_banner_url = politician[:banner] if politician.key?(:banner)
   p.save
 end
 
