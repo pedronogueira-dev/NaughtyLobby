@@ -87,7 +87,7 @@
           <%= form_for([@politician, @meeting])do |f| %>
           <%= f.date_field :start_date%>
           <%= f.date_field :end_date%>
-          <%= f.submit "Rent", class: "btn btn-primary btn-sm" %>
+          <%= f.submit "Rent", class: "btn btn-primary btn-sm service-btn" %>
           <% end %>
         </div>
       </div>
@@ -128,7 +128,7 @@
      </div>
      <div>
      </div>
-     <%= f.submit "Click to Buy My Vote", class: "btn btn-primary btn-lg algin-content align-middle" %>
+     <%= f.submit "Click to Buy My Vote", class: "btn btn-primary btn-lg algin-content align-middle service-btn"%>
      <% end %>
    </div>
  </div>

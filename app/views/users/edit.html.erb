@@ -3,9 +3,9 @@
     <div class="row">
       <div class="col-sm-6">
         <%= simple_form_for(@user) do |f| %>
-          <%= f.file_field :photo_url %>
+          <%= f.input :photo_url, label: "Picture Url" %>
           <%= f.input :photo_url_cache, as: :hidden %>
-          <%= f.button :submit %>
+          <%= f.button :submit, "Upload picture" %>
         <% end %>
       </div>
     </div>

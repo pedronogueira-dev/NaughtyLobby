@@ -6,11 +6,8 @@ class UsersController < ApplicationController
   end
 
   def upload
-    if params[:user].present? && params[:user][:photo_url].present?
-      preloaded = Cloudinary::PreloadedFile.new(params[:user][:photo_url])
-      raise "Invalid upload signature" if !preloaded.valid?
-      @user.photo_url = preloaded.identifier
-    end
+    current_user.remote_photo_url_url = photo_params[:photo_url]
+    current_user.save
     redirect_to :dashboard
   end
 
